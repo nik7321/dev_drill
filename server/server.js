@@ -2,7 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import User from './models/User.js';
+import dotenv from 'dotenv';
 
+
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
@@ -25,6 +28,7 @@ app.get("/api/info",(req,res) => {
     res.json({message:"User name is Nik"});
 });
 
+//controller for form submit
 app.post("/api/submit",async(req,res) => {
     try{
         const {name,email,age} = req.body;

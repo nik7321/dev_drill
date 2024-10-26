@@ -3,10 +3,13 @@ import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 
+import Form from './components/Form';
+
 function Home(){
   return(
     <div>
       <h1>Welcome to Home!</h1>
+      <Form/> {/*using form component at homepage*/}
     </div>
   );
 }
