@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 import axios from 'axios';
 
 import Form from './components/Form';
+import SuccessPage from './components/SuccessPage';
 
 function Home(){
   return(
@@ -70,6 +71,7 @@ function App(){
         <Route path='/' element={<Home/>}/>
         <Route path='/api/message' element={<Message/>}/>
         <Route path='/api/info' element={<Info/>}/>
+        <Route path='/success' element={<SuccessPage/>}/>
       </Routes>
     </Router>
   )

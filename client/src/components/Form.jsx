@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import {useNavigate} from 'react-router-dom';
 import axios from "axios";
 
 const useForm = () => {
@@ -8,6 +9,8 @@ const useForm = () => {
         email:'',
         age:''
     });
+
+    const navigate = useNavigate();
 
     //handle state update when user types into any form field
     const handleChange = (e) => {
@@ -23,6 +26,7 @@ const useForm = () => {
         try{
             const response = await axios.post('http://localhost:5000/api/submit',formData);
             alert(response.data.message);
+            navigate('/success');
         }
         catch(error){
             console.error('Error submitting form: ',error);
